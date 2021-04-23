@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "790c8b48-ff3c-4dc2-aabb-a8474523a962",
+		"name": "BRQ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/wp/brq/pessoas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"wp",
+						"brq",
+						"pessoas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/wp/brq/pessoas/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"wp",
+						"brq",
+						"pessoas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\" : \"LEANDRO X\",\n    \"cpf\" : \"12345678909\",\n    \"email\" : \"lazevedo@gmail.com\",\n    \"telefone\" : \"(22) 000000000\",\n    \"sexo\" : \"M\",\n    \"datanasciment\" : \"1987-07-05\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/wp/brq/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"wp",
+						"brq",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"teclado 12\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/wp/brq/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"wp",
+						"brq",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"teclado\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/wp/brq/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"wp",
+						"brq",
+						"produto"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
