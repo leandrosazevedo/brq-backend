@@ -21,7 +21,7 @@ final class PessoaController{
                         ->setUserMessage('Erro ao selecionar todas as Pessoas!')
                         ->setDevMessage($ex->getMessage())
                         ->setException($ex);
-            $response = $response->withJson($resultModel->toArray(), 500);
+            $response = $response->withJson($resultModel->toArray(), 500); // INTERNAL SERVER ERROR
         }
         return $response;
     }
@@ -32,14 +32,24 @@ final class PessoaController{
             $id = $args['id'];
             $pessoaDAO = new PessoaDAO();
             $pessoa = $pessoaDAO->getPessoaByID($id);
-            $response = $response->withJson($pessoa,200);
+
+            if($pessoa === false){
+                $resultModel->setSuccess(false)
+                            ->setUserMessage('Pessoa não encontrada')
+                            ->setDevMessage($pessoa)
+                            ->setException('');
+                
+                $response = $response->withJson($resultModel->toArray(), 404); // NOT FOUND
+            } else {
+                $response = $response->withJson($pessoa,200);
+            }
         } catch (\Exception $ex){
             $resultModel->setSuccess(false)
                         ->setUserMessage('Erro ao selecionar a Pessoa requisitada!')
                         ->setDevMessage($ex->getMessage())
                         ->setException($ex);
 
-            $response = $response->withJson($resultModel->toArray(), 500);
+            $response = $response->withJson($resultModel->toArray(), 500); // INTERNAL SERVER ERROR
         }
         return $response;
     }
@@ -68,7 +78,7 @@ final class PessoaController{
                             ->setUserMessage('Pessoa inserida com sucesso!')
                             ->setDevMessage($result);
                 
-                $response = $response->withJson($resultModel->toArray(), 201);
+                $response = $response->withJson($resultModel->toArray(), 201); // CREATED
             } else {
                 throw new \Exception($result);
             }
@@ -130,7 +140,7 @@ final class PessoaController{
             $pessoaDAO = new PessoaDAO();
             $result = $pessoaDAO->deletePessoa($id);
             if($result === true){
-                $response = $response->withJson([], 204);
+                $response = $response->withStatus(204); // No Content
             } else {
                 throw new \Exception($result);
             }
@@ -143,6 +153,5 @@ final class PessoaController{
         }
         return $response;
     }
-
 
 }

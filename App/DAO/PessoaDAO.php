@@ -4,11 +4,7 @@ namespace App\DAO;
 
 use App\Models\PessoaModel;
 
-class PessoaDAO extends Conexao{
-    
-    public function __construct(){
-        parent::__construct();
-    }
+class PessoaDAO extends GenericDAO{
 
     public function getAllPessoas(){
         return $this->select('SELECT * FROM pessoa;',[]);
