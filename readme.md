@@ -1,17 +1,35 @@
-# BACKEND REST API - PHP
+# Brq Back End
+Este projeto foi feito em `PHP` com o `Slim Framework`
+
+## Servidor de desenvolvimento
+
+Para rodar, basta estar em um servidor php.
+
+## Configurações básicas
+
+Acesso o arquivo `./util/db.sql` para obter o código de criação do Banco de dados, e da tabela.
+
+Acesse o arquivo `./env.php` e modifique as constantes listadas abaixo para o sistema se conectar ao banco Mysql:
+- `DB_HOST` => Host do Banco de Dados
+- `DB_NAME` => Nome do Banco de Dados
+- `DB_USER` => Usuário do Banco de Dados
+- `DB_PASSWORD` => Senha do Banco de Dados
+- `DB_PORT` => Porta do Banco de Dados (Padrão do Mysql: 3306)
+
+No arquivo `./util/BRQ.postman_collection.json` existe um exemplo de cada chamada disponibilizada no padrão do `Postman`.
 
 
 ## CONSULTAS
 
-# Retorna todas as pessoas
+## Retorna todas as pessoas
 Method: GET
-{BASEURI}/pessoas
+{BASEURI}/pessoa
 
-# Retorna uma pessoa específica
+## Retorna uma pessoa específica
 Method: GET
 {BASEURI}/pessoa/{id}
 
-# Cria uma pessoa
+## Cria uma pessoa
 Method: POST
 {BASEURI}/pessoa
 Header
@@ -26,7 +44,7 @@ Body
     "datanascimento" : "1987-07-05"
 }
 
-# Atualiza uma pessoa
+## Atualiza uma pessoa
 Method: PUT
 {BASEURI}/pessoa/{id}
 Header
@@ -41,6 +59,6 @@ Body
     "datanascimento" : "1987-07-05"
 }
 
-# Deleta uma pessoa
+## Deleta uma pessoa
 Method: DELETE
 {BASEURI}/pessoa/{id}
