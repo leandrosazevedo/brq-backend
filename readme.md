@@ -3,7 +3,8 @@ Este projeto foi feito em `PHP` com o `Slim Framework`
 
 ## Servidor de desenvolvimento
 
-Para rodar, basta estar em um servidor php.
+- Para rodar, basta estar em um servidor php.
+- No terminal, executar o comando `composer install` para instalar as dependencias do projeto.
 
 ## Configurações básicas
 
@@ -22,14 +23,19 @@ No arquivo `./util/BRQ.postman_collection.json` existe um exemplo de cada chamad
 ## CONSULTAS
 
 ## Retorna todas as pessoas
+```
 Method: GET
 {BASEURI}/pessoa
+```
 
 ## Retorna uma pessoa específica
+```
 Method: GET
 {BASEURI}/pessoa/{id}
+```
 
 ## Cria uma pessoa
+```
 Method: POST
 {BASEURI}/pessoa
 Header
@@ -43,8 +49,10 @@ Body
     "sexo" : "M",
     "datanascimento" : "1987-07-05"
 }
+```
 
 ## Atualiza uma pessoa
+```
 Method: PUT
 {BASEURI}/pessoa/{id}
 Header
@@ -58,7 +66,10 @@ Body
     "sexo" : "M",
     "datanascimento" : "1987-07-05"
 }
+```
 
 ## Deleta uma pessoa
+```
 Method: DELETE
 {BASEURI}/pessoa/{id}
+```
