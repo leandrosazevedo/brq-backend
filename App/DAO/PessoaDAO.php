@@ -2,9 +2,10 @@
 
 namespace App\DAO;
 
+use App\Interface\PessoaInterface;
 use App\Models\PessoaModel;
 
-class PessoaDAO extends GenericDAO{
+class PessoaDAO extends GenericDAO implements PessoaInterface {
 
     public function getAllPessoas(){
         return $this->select('SELECT * FROM pessoa;',[]);

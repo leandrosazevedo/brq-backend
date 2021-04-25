@@ -8,8 +8,8 @@ use App\Controllers\ProdutoController;
 $app = new \Slim\App(slimConfiguration());
 
 // CONSULTAR
-$app->get('/pessoas', PessoaController::class . ':getPessoas');
-$app->get('/pessoas/{id}', PessoaController::class . ':getPessoaByID');
+$app->get('/pessoa', PessoaController::class . ':getPessoas');
+$app->get('/pessoa/{id}', PessoaController::class . ':getPessoaByID');
 
 // INSERIR
 $app->post('/pessoa', PessoaController::class . ':inserirPessoa');

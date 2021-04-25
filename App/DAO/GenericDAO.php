@@ -2,7 +2,7 @@
 
 namespace App\DAO;
 use App\DAO\Conexao;
-use App\Generic\CRUDInterface;
+use App\Interface\CRUDInterface;
 
 class GenericDAO extends Conexao implements CRUDInterface{
 
